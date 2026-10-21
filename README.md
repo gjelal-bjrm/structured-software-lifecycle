@@ -24,7 +24,7 @@ La documentation produite est rangée dans un dossier `docs/` du projet, à part
 ### Option 1 : comme plugin (recommandé)
 
 ```bash
-claude plugin marketplace add gjelalb96/structured-software-lifecycle
+claude plugin marketplace add gjelal-bjrm/structured-software-lifecycle
 claude plugin install structured-software-lifecycle@structured-software-lifecycle
 ```
 
@@ -32,7 +32,7 @@ claude plugin install structured-software-lifecycle@structured-software-lifecycl
 
 1. Cloner ce repo :
    ```bash
-   git clone https://github.com/gjelalb96/structured-software-lifecycle.git
+   git clone https://github.com/gjelal-bjrm/structured-software-lifecycle.git
    ```
 2. Copier (ou lier) le dossier `skills/structured-software-lifecycle` dans `~/.claude/skills/` pour l'avoir dans tous vos projets, ou dans `<votre-projet>/.claude/skills/` pour un seul projet.
 
