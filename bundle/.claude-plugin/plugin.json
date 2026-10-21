@@ -1,0 +1,16 @@
+{
+  "name": "structured-software-lifecycle-complete",
+  "description": "Installs the structured-software-lifecycle method together with all its recommended companion skills.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Gjelal Bajrami"
+  },
+  "license": "MIT",
+  "dependencies": [
+    "structured-software-lifecycle",
+    "superpowers",
+    "impeccable",
+    "emil-design-skills",
+    "webapp-testing"
+  ]
+}

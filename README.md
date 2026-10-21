@@ -21,52 +21,88 @@ La documentation produite est rangée dans un dossier `docs/` du projet, à part
 
 ## Installation
 
-### Option 1 : comme plugin (recommandé)
+Ce repo est aussi un **catalogue de plugins** : il contient la méthode et les skills complémentaires avec lesquels elle fonctionne le mieux. Commencez par ajouter le catalogue (une seule fois) :
 
 ```bash
 claude plugin marketplace add gjelal-bjrm/structured-software-lifecycle
+```
+
+Puis choisissez **une** des options suivantes.
+
+### Option A : le pack complet (recommandé)
+
+La méthode et tous les skills complémentaires, en une seule commande :
+
+```bash
+claude plugin install structured-software-lifecycle-complete@structured-software-lifecycle
+```
+
+### Option B : la méthode seule
+
+```bash
 claude plugin install structured-software-lifecycle@structured-software-lifecycle
 ```
 
-### Option 2 : à la main
+Le skill fonctionne seul : sans les skills complémentaires, Claude fait chaque étape lui-même en suivant la méthode, avec un peu moins d'expertise sur le design, les tests et le débogage.
 
-1. Cloner ce repo :
-   ```bash
-   git clone https://github.com/gjelal-bjrm/structured-software-lifecycle.git
-   ```
-2. Copier (ou lier) le dossier `skills/structured-software-lifecycle` dans `~/.claude/skills/` pour l'avoir dans tous vos projets, ou dans `<votre-projet>/.claude/skills/` pour un seul projet.
+### Option C : à la carte
+
+Installez la méthode (option B), puis les complémentaires de votre choix parmi ceux du tableau ci-dessous, par exemple :
+
+```bash
+claude plugin install impeccable@structured-software-lifecycle
+```
+
+### Option D : sans plugin
+
+Clonez ce repo et copiez (ou liez) le dossier `skills/structured-software-lifecycle` dans `~/.claude/skills/` (tous vos projets) ou dans `<votre-projet>/.claude/skills/` (un seul projet).
 
 ### Vérifier
 
-Dans une nouvelle session Claude Code, demandez : « Quels skills as-tu à disposition ? ». Puis lancez un projet : « Je veux créer une application de… ».
+Redémarrez Claude Code, puis demandez : « Quels skills as-tu à disposition ? ». Pour essayer la méthode : « Je veux créer une application de… ».
 
-## Skills complémentaires (facultatifs)
+## Skills complémentaires
 
-Le skill fonctionne seul. Il sait aussi faire appel à d'autres skills quand ils sont installés, pour apporter plus d'expertise à certaines étapes. S'ils ne sont pas installés, Claude fait l'étape lui-même en suivant la méthode.
+Le catalogue ne copie pas ces skills : il pointe vers leurs repos d'origine, vous recevez donc toujours leur dernière version, sous la licence de leurs auteurs.
 
-| Pour quoi | Skills | Source |
-|---|---|---|
-| Clarifier le besoin, tests, débogage, vérification, relecture de code | `brainstorming`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `requesting-code-review` | [obra/superpowers](https://github.com/obra/superpowers) |
-| Conception et qualité des interfaces | `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) |
-| Finition et animations | `emil-design-eng`, `review-animations`, `improve-animations`, `animation-performance` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
-| Tester une app web dans un navigateur | `webapp-testing` | [anthropics/skills](https://github.com/anthropics/skills) |
+| Plugin | Ce qu'il apporte | Skills | Source |
+|---|---|---|---|
+| `superpowers` | Clarifier le besoin, tests d'abord, débogage méthodique, vérification avant de dire « terminé », relecture de code | `brainstorming`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `requesting-code-review`… | [obra/superpowers](https://github.com/obra/superpowers) |
+| `impeccable` | Concevoir, critiquer, auditer et peaufiner les interfaces | `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) |
+| `emil-design-skills` | Finition de l'interface et animations | `emil-design-eng`, `animate`, `review-animations`, `improve-animations`, `animation-performance` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| `webapp-testing` | Tester une app web dans un vrai navigateur (Playwright) | `webapp-testing` | [anthropics/skills](https://github.com/anthropics/skills) |
 
-Selon la technologie de votre projet, des skills spécialisés sont aussi utiles, par exemple :
+À savoir :
+- `superpowers` installe tous ses skills, ainsi qu'un réglage qui rappelle à Claude, au début de chaque session, de vérifier s'il existe un skill adapté avant de répondre. La méthode reste prioritaire pour le déroulé du projet : les skills superpowers servent à l'intérieur de chaque étape.
+- `impeccable` ajoute aussi ses propres agents et automatismes pour le design.
+
+Selon la technologie de votre projet, des skills spécialisés sont aussi utiles (à installer depuis leurs propres repos) :
 
 - **Mobile (Expo, React Native)** : [expo/skills](https://github.com/expo/skills), [callstackincubator/agent-skills](https://github.com/callstackincubator/agent-skills)
 - **Web React / Next.js** : [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
 - **Supabase** : [supabase/agent-skills](https://github.com/supabase/agent-skills)
 - **Audit de sécurité** : [trailofbits/skills](https://github.com/trailofbits/skills)
 
-Chaque repo explique sa propre installation. N'installez que ce dont vous avez besoin : trop de skills qui se recoupent peuvent se contredire.
+N'installez que ce dont vous avez besoin : trop de skills qui se recoupent peuvent se contredire.
+
+## Mettre à jour
+
+```bash
+claude plugin marketplace update structured-software-lifecycle
+claude plugin update structured-software-lifecycle-complete
+```
 
 ## Contenu du repo
 
 ```
+.claude-plugin/
+├── plugin.json         le plugin « méthode »
+└── marketplace.json    le catalogue : la méthode, le pack complet et les complémentaires
+bundle/                 le pack complet (une liste de dépendances, sans contenu propre)
 skills/structured-software-lifecycle/
-├── SKILL.md       la page principale : les phases et quand utiliser quoi
-├── reference/     une fiche détaillée par phase, lue seulement au moment utile
-└── templates/     les modèles de documents à remplir pour chaque projet
+├── SKILL.md            la page principale : les phases et quand utiliser quoi
+├── reference/          une fiche détaillée par phase, lue seulement au moment utile
+└── templates/          les modèles de documents à remplir pour chaque projet
 ```
 
 ## Origine
@@ -75,4 +111,4 @@ Cette méthode est issue du travail de Bachelor de Gjelal Bajrami (Haute École 
 
 ## Licence
 
-[MIT](LICENSE)
+[MIT](LICENSE) pour ce repo. Les skills complémentaires gardent la licence de leurs auteurs respectifs.

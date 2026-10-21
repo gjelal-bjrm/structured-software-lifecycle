@@ -1,18 +1,72 @@
 {
   "name": "structured-software-lifecycle",
+  "description": "A Claude Code skill for running software projects end to end with a structured, technology-agnostic method, plus the companion skills it works best with.",
   "owner": {
     "name": "Gjelal Bajrami"
-  },
-  "metadata": {
-    "description": "A Claude Code skill for running software projects end to end with a structured, technology-agnostic method."
   },
   "plugins": [
     {
       "name": "structured-software-lifecycle",
       "source": "./",
       "description": "Structured, technology-agnostic method to run a software project end to end: scoping, specification, data model, API, architecture, planning, risk analysis and iterative development with living documentation.",
-      "version": "1.0.0",
       "category": "productivity"
+    },
+    {
+      "name": "structured-software-lifecycle-complete",
+      "source": "./bundle",
+      "description": "Installs the method together with all its recommended companion skills in one command.",
+      "category": "productivity"
+    },
+    {
+      "name": "superpowers",
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      },
+      "description": "Companion (by Jesse Vincent): brainstorming, test-driven development, systematic debugging, verification before completion, code review.",
+      "category": "companion"
+    },
+    {
+      "name": "impeccable",
+      "source": {
+        "source": "git-subdir",
+        "url": "pbakaus/impeccable",
+        "path": "plugin"
+      },
+      "description": "Companion (by Paul Bakaus): designing, critiquing, auditing and polishing user interfaces.",
+      "category": "companion"
+    },
+    {
+      "name": "emil-design-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "emilkowalski/skills",
+        "path": "skills"
+      },
+      "description": "Companion (by Emil Kowalski): UI polish and animation choices, review, improvement and performance.",
+      "category": "companion",
+      "strict": false,
+      "skills": [
+        "./emil-design-eng",
+        "./animate",
+        "./review-animations",
+        "./improve-animations",
+        "./animation-performance"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "source": {
+        "source": "git-subdir",
+        "url": "anthropics/skills",
+        "path": "skills"
+      },
+      "description": "Companion (by Anthropic): test local web applications in a real browser with Playwright.",
+      "category": "companion",
+      "strict": false,
+      "skills": [
+        "./webapp-testing"
+      ]
     }
   ]
 }
