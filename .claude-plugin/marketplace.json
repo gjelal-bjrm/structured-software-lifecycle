@@ -1,0 +1,18 @@
+{
+  "name": "structured-software-lifecycle",
+  "owner": {
+    "name": "Gjelal Bajrami"
+  },
+  "metadata": {
+    "description": "A Claude Code skill for running software projects end to end with a structured, technology-agnostic method."
+  },
+  "plugins": [
+    {
+      "name": "structured-software-lifecycle",
+      "source": "./",
+      "description": "Structured, technology-agnostic method to run a software project end to end: scoping, specification, data model, API, architecture, planning, risk analysis and iterative development with living documentation.",
+      "version": "1.0.0",
+      "category": "productivity"
+    }
+  ]
+}

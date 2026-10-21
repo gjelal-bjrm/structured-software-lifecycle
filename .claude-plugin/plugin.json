@@ -1,0 +1,10 @@
+{
+  "name": "structured-software-lifecycle",
+  "description": "Structured, technology-agnostic method to run a software project end to end: scoping, specification, data model, API, architecture, planning, risk analysis and iterative development with living documentation.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Gjelal Bajrami"
+  },
+  "license": "MIT",
+  "keywords": ["methodology", "project", "specification", "user-stories", "backlog", "architecture", "documentation", "planning"]
+}
