@@ -15,9 +15,32 @@ La méthode ne dépend d'aucune technologie : elle convient aussi bien à un sit
 | 3. Planification | Décider dans quel ordre et anticiper les problèmes | Planning par semaine, analyse des risques (impact × probabilité, mitigation, risque résiduel) |
 | 4. Itérations | Développer une story à la fois | Analyse et conception → Implémentation → Test → Évaluation, puis « problèmes rencontrés » |
 
-Les phases 1 à 3 ont lieu une fois au début du projet ; la phase 4 se répète pour chaque story. Pour une petite modification, le skill ne se déclenche pas : il est réservé aux nouveaux projets et aux fonctionnalités importantes.
+Les phases 1 à 3 ont lieu une fois au début du projet ; la phase 4 se répète pour chaque story.
 
 La documentation produite est rangée dans un dossier `docs/` du projet, à partir des modèles fournis dans [`templates/`](skills/structured-software-lifecycle/templates).
+
+## Quand l'utiliser
+
+Le skill donne une colonne vertébrale à un projet : comprendre le besoin, décider quoi construire, l'organiser, puis le développer morceau par morceau en laissant une documentation claire. Son but n'est pas de coder plus vite, mais d'éviter de construire la mauvaise chose, de se perdre en route, ou d'avoir un projet que plus personne ne comprend quelques mois plus tard.
+
+| Situation | Utile ? | Ce qui se passe |
+|---|---|---|
+| **Nouveau projet conséquent** (application, logiciel, plateforme) | Oui, c'est son cas idéal | Les 4 phases complètes : cadrage, backlog, données et API, planning et risques, puis les itérations |
+| **Grosse fonctionnalité dans un projet existant** (paiement, espace d'administration…) | Oui | Version courte : personas et stories concernés, cas d'utilisation, impact sur les données et les API, puis une ou plusieurs itérations |
+| **Fonctionnalité moyenne dans un projet déjà cadré** | Oui, en version légère | Directement une itération : analyse, implémentation, test, évaluation, avec sa fiche dans `docs/iterations/` |
+| **Petite tâche** (corriger un bug, changer un texte, ajuster un style, petit script) | Non | Le skill ne se déclenche pas, volontairement : un cadrage complet serait une perte de temps |
+| **Prototype rapide ou idée à tester** | Plutôt non | La méthode est faite pour durer. Si le prototype devient un vrai projet, appliquez-la à ce moment-là |
+| **Projet déjà bien avancé, sans documentation** | Partiellement | Voir la limite ci-dessous |
+
+Pour déclencher la méthode explicitement, demandez par exemple : « applique la méthode structured-software-lifecycle à ce projet ».
+
+### Limite actuelle : la reprise d'un projet existant
+
+Le skill sait s'adapter à un projet qui a déjà sa propre documentation, mais il ne prévoit pas encore de démarche pour un projet avancé **sans** documentation. Claude risque alors soit de refaire un cadrage complet comme si le projet n'existait pas, soit de passer directement aux itérations sans vision d'ensemble.
+
+En attendant, le plus efficace est de le guider : demandez d'abord un état des lieux du projet tel qu'il est (fonctionnalités, technologies, architecture, données, API), puis un backlog de ce qui est fait et de ce qui reste, et seulement ensuite des itérations.
+
+Un **mode « reprise de projet »** est prévu pour une prochaine version. Il sera construit à partir de pratiques réelles et testé sur de vrais projets avant d'être publié.
 
 ## Installation
 
