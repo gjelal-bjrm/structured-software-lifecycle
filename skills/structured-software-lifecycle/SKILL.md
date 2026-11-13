@@ -60,6 +60,6 @@ Si un skill complémentaire propose son propre déroulé de projet (par exemple 
 
 ## Règles générales
 
-- Avancer phase par phase et montrer chaque livrable à l'utilisateur avant de passer à la suite.
+- Avancer phase par phase. Produire tous les livrables d'une phase d'une traite, puis les montrer ensemble à l'utilisateur et attendre son accord avant la phase suivante : un seul arrêt par phase, pas un par livrable.
 - Les documents restent vivants : si une itération change le modèle de données ou une API, mets à jour `04-donnees.md` ou `05-api.md`.
 - Toujours noter les problèmes rencontrés et leur solution : c'est la mémoire du projet.
