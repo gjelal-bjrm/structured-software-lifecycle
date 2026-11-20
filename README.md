@@ -130,7 +130,7 @@ skills/structured-software-lifecycle/
 
 ## Origine
 
-Cette méthode est issue du travail de Bachelor de Gjelal Bajrami (Haute École de Gestion de Genève, filière Informatique de gestion, 2019), puis adaptée aux pratiques actuelles et à l'utilisation avec Claude Code.
+Cette méthode est issue du travail de Bachelor de Gjelal Bajrami (Haute École de Gestion de Genève, filière Informatique de gestion, 2019), puis adaptée aux pratiques actuelles et à l'utilisation avec Claude Code. Le travail de Bachelor est disponible sur son site, [gjelal-bajrami.ch](https://gjelal-bajrami.ch) : c'est à partir de lui que ce skill a été construit.
 
 ## Licence
 
